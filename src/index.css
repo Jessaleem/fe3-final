@@ -120,3 +120,8 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+.home {
+  display: flex;
+  flex-direction: column;
+}

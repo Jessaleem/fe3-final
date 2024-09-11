@@ -9,8 +9,11 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <button onClick={toogleTheme}>{theme === 'light' ? '🌞' : '🌚'}</button>
-      <button onClick={() => navigate(-1)}>🔙</button>
+      <div className="navbar-title">
+        <span className="navbar-titleI">DH</span>
+        <span className="navbar-titleII">Odonto</span>
+      </div>
+      <div className="navbar-links">
       <Link to={routes.home}>
         <h4>Home</h4>
       </Link>
@@ -20,6 +23,9 @@ const Navbar = () => {
       <Link to={routes.favs}>
         <h4>Favorites</h4>
       </Link>
+      <button className="navbar-button" onClick={toogleTheme}>{theme === 'light' ? '🌞' : '🌚'}</button>
+      <button onClick={() => navigate(-1)}>🔙</button>
+      </div>
     </nav>
   )
 }

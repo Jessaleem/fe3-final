@@ -22,7 +22,7 @@ const Card = ({ char }) => {
           <h4>{char.name}</h4>
           <p>{char.username}</p>
         </Link>
-        <button onClick={addFav}>⭐</button>
+        <button className="favButton" onClick={addFav}>⭐</button>
         {/* En cada card deberan mostrar en name - username y el id */}
 
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}

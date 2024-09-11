@@ -25,12 +25,24 @@ const Detail = () => {
 
   return (
     <div className={DetailStyle.master}>
-      <div className={DetailStyle.detail}>
-        <h1>Nombre: {detail.name}</h1>
-        <h3>Email: {detail.email}</h3>
-        <h3>Telefono: {detail.phone}</h3>
-        <h3>Sitio Web: {detail.website}</h3>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Sitio Web</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{detail.name}</td>
+            <td>{detail.email}</td>
+            <td>{detail.phone}</td>
+            <td>{detail.website}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }

@@ -52,7 +52,7 @@ const Context = ({children}) => {
  
 
   return (
-    <CharStates.Provider value={{theme, setTheme, favs, setFavs, chars, toogleTheme}}>
+    <CharStates.Provider value={{theme, setTheme, favs, setFavs, chars, toogleTheme, setChars}}>
         {children}
     </CharStates.Provider>
   )

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 const Card = ({ char }) => {
   const { favs, setFavs } = useCharStates();
+  const { setChars } = useCharStates();
   const [ isfav, setIsFav] = useState(char.isFav);
 
   const addFav = () => {
@@ -16,6 +17,13 @@ const Card = ({ char }) => {
       setIsFav(true);
     } else {
       setFavs(favs.filter((fav) => fav.id !== char.id));
+      setChars((chars) => chars.map((c) => {
+        if (c.id === char.id) {
+          c.isFav = false;
+        }
+        return c;
+      }));
+
       setIsFav(false);
     }
   };

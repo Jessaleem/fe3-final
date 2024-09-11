@@ -1,12 +1,15 @@
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 import { Link, useNavigate } from "react-router-dom"
 import { routes } from "../utils/routes";
+import { useCharStates } from "../Context";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const {theme, toogleTheme} = useCharStates();
+
   return (
     <nav className="navbar">
-      <button>Change theme</button>
+      <button onClick={toogleTheme}>{theme === 'light' ? '🌞' : '🌚'}</button>
       <button onClick={() => navigate(-1)}>🔙</button>
       <Link to={routes.home}>
         <h4>Home</h4>

@@ -15,16 +15,21 @@ const Context = ({children}) => {
     const [chars, setChars] = useState([]);
     const url = "https://jsonplaceholder.typicode.com/users/"
 
+    useEffect(() => {
+      localStorage.setItem('favs', JSON.stringify(favs));
+    }, [favs]);
+
   useEffect(() => {
     axios(url).then((res) =>{
-      console.log(res)
-      setChars(res.data)
+      res.data.map((char) => {
+        char.isFav = favs.some((fav) => fav.id === char.id);
+        return char;
+      })
+      setChars(res.data) 
     } )
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem('favs', JSON.stringify(favs));
-  }, [favs]);
+  
 
   useEffect(() => {
     localStorage.setItem('theme', theme);

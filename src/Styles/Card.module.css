@@ -59,3 +59,13 @@
   .card button{
     padding: 6px;
   }
+
+  .card button.favorite{
+    background-color: rgb(206, 217, 142);
+    color: red;
+  }
+
+  button.favorite:hover{
+    background-color: rgb(206, 217, 142);
+    color: red;
+  }

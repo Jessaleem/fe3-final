@@ -17,7 +17,11 @@ const Context = ({children}) => {
   useEffect(() => {
     axios(url).then((res) =>{
       //console.log(res)
-      setChars(res.data)
+      // realizar busqueda local storage de usuarios que no esten en los favs -- manipular el isfav
+      // si no esta en favs agregarlo
+      // si esta en favs removerlo
+    
+      setChars(res.data) 
     } )
   }, []);
 

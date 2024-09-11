@@ -9,7 +9,7 @@ const Favorites = () => {
   const {favs} = useCharStates();
   return (
     <>
-      <h1>Favs</h1>
+      <h1>Favoritos</h1>
       <div className="card-grid">
         {favs.map((char) => (
           <Card key={char.id} char={char} />

@@ -1,0 +1,61 @@
+.formulario {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(158, 194, 151);
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgb(158, 194, 151);
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.messageError{
+    color: rgb(179, 0, 0);
+    font-size: 1.0rem;
+    text-align: center;
+    margin-top: 1rem;
+    border: 1px solid rgb(179, 0, 0);
+    border-radius: 6px;
+    background-color: rgb(212, 189, 189);
+}
+
+.entrada {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    color:  rgba(0,0,0,0.7);
+}
+
+.entrada:focus, .entrada:active{
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    color: #000;
+}
+
+.textos{
+    color: rgb(16, 15, 79);
+    font-size: 1.0rem;
+    text-align: left;
+}
+
+.formulario button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: rgb(201, 219, 197);
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  .formulario button:hover {
+    border-color: rgb(111, 148, 104);
+  }
+  .formulario button:focus,
+  .formulario button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }

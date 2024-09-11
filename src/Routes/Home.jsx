@@ -6,14 +6,16 @@ import { useCharStates } from '../Context'
 
 const Home = () => {
 
-  const {theme, chars} = useCharStates();
+  const { theme, chars } = useCharStates();
 
   return (
     <main className="home" >
       <h1>Home</h1>
-      {chars.map((char) => (
-        <Card key={char.id} char={char} />
-      ))}
+      <div className="card-grid">
+        {chars.map((char) => (
+          <Card key={char.id} char={char} />
+        ))}
+      </div>
     </main>
   )
 }

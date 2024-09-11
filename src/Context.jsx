@@ -16,7 +16,7 @@ const Context = ({children}) => {
 
   useEffect(() => {
     axios(url).then((res) =>{
-      console.log(res)
+      //console.log(res)
       setChars(res.data)
     } )
   }, []);

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FormStyle from "../Styles/Form.module.css";
 
 const Form = () => {
@@ -18,7 +18,7 @@ const Form = () => {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (usuario.nombre.trim().length >= 5 && emailRegex.test(usuario.email)) {
+    if (usuario.nombre.trim().length >= 5 && emailRegex.test(usuario.email) && usuario.comentarios.trim().length >= 5) {
       setError(false);
       setMostrar(true);
     } else {
@@ -28,6 +28,14 @@ const Form = () => {
 
   const handleChange = (event) => {
     setUsuario({ ...usuario, [event.target.name]: event.target.value });
+  };
+
+  const reset = () => {
+    setUsuario({
+      nombre: "",
+      email: "",
+      comentarios: ""
+    });
   };
 
   return (
@@ -54,7 +62,7 @@ const Form = () => {
         <button>Enviar</button>
 
         {error ? <p className={FormStyle.messageError}>Por favor verifique su información nuevamente</p> : (
-                mostrar && <p>Gracias [nombre del usuario], te contactaremos cuando antes vía mail</p>
+                mostrar && <p>Gracias {usuario.nombre}, te contactaremos cuando antes vía mail</p>
             )  }
       </form>
       

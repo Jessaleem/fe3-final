@@ -15,20 +15,21 @@ const Context = ({children}) => {
     const [chars, setChars] = useState([]);
     const url = "https://jsonplaceholder.typicode.com/users/"
 
+    useEffect(() => {
+      localStorage.setItem('favs', JSON.stringify(favs));
+    }, [favs]);
+
   useEffect(() => {
     axios(url).then((res) =>{
-      //console.log(res)
-      // realizar busqueda local storage de usuarios que no esten en los favs -- manipular el isfav
-      // si no esta en favs agregarlo
-      // si esta en favs removerlo
-    
+      res.data.map((char) => {
+        char.isFav = favs.some((fav) => fav.id === char.id);
+        return char;
+      })
       setChars(res.data) 
     } )
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem('favs', JSON.stringify(favs));
-  }, [favs]);
+  
 
   useEffect(() => {
     localStorage.setItem('theme', theme);

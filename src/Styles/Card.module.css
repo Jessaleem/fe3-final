@@ -29,6 +29,7 @@
   
   .card:hover{
     border: 0.5px solid rgb(206, 217, 142);
+    background-color: #E3EDDF;
   }
   
   .imagediv{
@@ -58,14 +59,20 @@
 
   .card button{
     padding: 6px;
+    cursor: pointer;
+    border: none;
   }
 
-  .card button.favorite{
-    background-color: rgb(206, 217, 142);
-    color: red;
+  .btnFavorite{
+    background-color: #E3EDDF;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50px;
   }
 
-  button.favorite:hover{
-    background-color: rgb(206, 217, 142);
-    color: red;
+  .btnNotFavorite{
+    background-color: rgba(136, 136, 136, 0.116);
+    border-radius: 5px;
+    color: black;
+    width: 116px;
   }

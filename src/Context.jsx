@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
-import { createContext, useState, useEffect, useContext } from "react";
+import { createContext, useEffect, useContext, useReducer } from "react";
 import axios from "axios";
+import { reducer } from "./reducers/reducers";
 
 
 const CharStates = createContext();
@@ -8,51 +9,44 @@ const CharStates = createContext();
 const Context = ({children}) => {
 
     const lsFavs = JSON.parse(localStorage.getItem('favs')) || [];
-    const lsTheme = localStorage.getItem('theme') || 'light';
+    const lsTheme = localStorage.getItem("theme") || "light";
+    const initialState = {
+      chars: [],
+      favs: lsFavs,
+      theme: lsTheme
+    }
 
-    const [theme, setTheme] = useState(lsTheme);
-    const [favs, setFavs] = useState(lsFavs);
-    const [chars, setChars] = useState([]);
     const url = "https://jsonplaceholder.typicode.com/users/"
 
+    const [state, dispatch] = useReducer(reducer, initialState );
+
     useEffect(() => {
-      localStorage.setItem('favs', JSON.stringify(favs));
-    }, [favs]);
+      localStorage.setItem('favs', JSON.stringify(state.favs));
+    }, [state.favs]);
 
   useEffect(() => {
     axios(url).then((res) =>{
       res.data.map((char) => {
-        char.isFav = favs.some((fav) => fav.id === char.id);
+        char.isFav = state.favs.some((fav) => fav.id === char.id);
         return char;
       })
-      setChars(res.data) 
+      dispatch({type: "GET_CHARS", payload: res.data});
     } )
   }, []);
 
-  
-
   useEffect(() => {
-    localStorage.setItem('theme', theme);
+    localStorage.setItem('theme', state.theme);
 
-    if (theme === "dark") {
+    if (state.theme === "dark") {
         document.body.classList.add("dark");
     } else {
         document.body.classList.remove("dark");
     }
-
-  }, [theme])
-
-  console.log('chars', chars)
-  console.log('favs', favs)
-
-  const toogleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  }
+  }, [state.theme])
 
  
-
   return (
-    <CharStates.Provider value={{theme, setTheme, favs, setFavs, chars, toogleTheme, setChars}}>
+    <CharStates.Provider value={{state, dispatch} }>
         {children}
     </CharStates.Provider>
   )

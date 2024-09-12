@@ -5,7 +5,12 @@ import { useCharStates } from "../Context";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const {theme, toogleTheme} = useCharStates();
+  const {state, dispatch} = useCharStates();
+
+  const toogleTheme = () => {
+    dispatch({type: "TOGGLE_THEME", payload: state.theme === "light" ? "dark" : "light"});
+  }
+
 
   return (
     <nav className="navbar">
@@ -23,7 +28,7 @@ const Navbar = () => {
       <Link to={routes.favs}>
         <h4>Favorites</h4>
       </Link>
-      <button className="navbar-button" onClick={toogleTheme}>{theme === 'light' ? '🌞' : '🌚'}</button>
+      <button className="navbar-button" onClick={toogleTheme}>{state.theme === 'light' ? '🌞' : '🌚'}</button>
       <button onClick={() => navigate(-1)}>🔙</button>
       </div>
     </nav>

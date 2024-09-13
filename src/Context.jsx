@@ -39,9 +39,6 @@ const Context = ({children}) => {
 
     if (state.theme === "dark") {
         document.body.classList.add("dark");
-        /*document.querySelectorAll('*').forEach((element) => {
-          element.classList.add('dark');
-        });*/
     } else {
         document.body.classList.remove("dark");
     }

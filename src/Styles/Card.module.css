@@ -21,6 +21,7 @@
 
   .link:hover{
     color: rgb(48, 91, 12);
+    text-decoration: underline;
   }
   .link p:hover{
     color: rgb(48, 91, 12);

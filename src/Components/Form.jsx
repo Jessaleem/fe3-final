@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import FormStyle from "../Styles/Form.module.css";
 import FormStyleDark from "../Styles/FormDark.module.css";
 import { useCharStates } from "../Context";

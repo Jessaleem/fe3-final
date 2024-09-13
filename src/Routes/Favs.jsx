@@ -5,7 +5,7 @@ import Card from "../Components/Card";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
-const Favorites = () => {
+const Favs = () => {
   const {state} = useCharStates();
   return (
     <>
@@ -19,4 +19,4 @@ const Favorites = () => {
   );
 };
 
-export default Favorites;
+export default Favs;

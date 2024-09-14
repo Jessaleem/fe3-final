@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer>
         <p>Powered by</p>
-        <img src="/images/dh.png" alt='DH-logo' />
+        <img src="https://res.cloudinary.com/jessaleem/image/upload/v1726287641/dh_pdieid.png" alt='DH-logo' />
     </footer>
   )
 }

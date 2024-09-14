@@ -2,6 +2,16 @@
 
 Examen Final de Frontend III
 
+## Entrega
+
+# 1. Corre el proyecto localmente:
+
+Puedes usar el comando `npm start` para correr el proyecto en tu computadora.
+
+# 2. Si se presenta algún inconveniente para la visualización, ve a Application en las herramientas de desarrollo y limpia las variables del localStorage.
+
+# 3. Si deseas visualizar el proyecto desplegado en vercel, accede a la URL https://fe3-final-nine-gold.vercel.app/
+
 ## Indice
 
 - [Requisitos](#requisitos)
@@ -57,7 +67,6 @@ Los siguientes aspectos son extras al requisito mínimo de aprobación que será
 **Funcionalidad de destacados**
 
 - Se valorará funcionalidades extra a esta feature, como lo pueden ser el eliminar de destacadados, manejo de errores al intentar agregar repetidos y reseteo total de los destacados.
-
 
 **Estilos**
 

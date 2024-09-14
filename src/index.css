@@ -86,10 +86,11 @@ footer {
   margin-top: 2rem;
   z-index: 50;
   background-color: #F6FDFF;
+  align-items: center;
 }
 
 body.dark footer {
-  background-color: #cac4c496;
+  background-color: #cac4c4;
 }
 
 footer > img{
@@ -98,7 +99,6 @@ footer > img{
 }
 footer > p{
   margin: 0;
-  padding-top: 0.7rem;
   color:rgb(32, 44, 29);
 }
 .dark footer > p{
